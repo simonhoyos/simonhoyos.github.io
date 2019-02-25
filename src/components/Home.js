@@ -1,6 +1,18 @@
 import React from 'react';
+import styled from 'styled-components';
+import { Carousel } from 'react-responsive-carousel';
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { StyledSection } from "./styles/StyledSection";
 import { ProfilePicture } from './ProfilePicture';
+
+const Content = styled.blockquote`
+  font-size: 18px;
+  padding: 20px;
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
 
 export function Home() {
   return (
@@ -8,6 +20,24 @@ export function Home() {
       <ProfilePicture />
       <div>
         <h2>Home</h2>
+        <Carousel
+          showArrows={false}
+          infiniteLoop
+          autoPlay
+          interval={5000}
+          showThumbs={false}
+          showStatus={false}
+        >
+          <div>
+            <Content>Passionate about coding. Love solving problems with React</Content>
+          </div>
+          <div>
+            <Content>Always eager to learn new things an accept new challenges.</Content>
+          </div>
+          <div>
+            <Content>My main mission is to create tools that help others to solve their day to day problems, facilitating them to achieve more in their personal and professional life.</Content>
+          </div>
+        </Carousel>
         <p>
           My main mission is to create tools that help others to solve their day to day problems, facilitating them to achieve more in their personal and professional life.<br/>
           <br/>

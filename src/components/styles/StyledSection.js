@@ -5,7 +5,7 @@ export const StyledSection = styled.section`
   grid-template-columns: 335px 1fr;
   height: 100vh;
 
-  div:nth-child(2) {
+  & > div:nth-child(2) {
     padding: 0 25px;
   }
 
