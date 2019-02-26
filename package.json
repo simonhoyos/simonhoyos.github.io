@@ -2,7 +2,7 @@
   "name": "simonhoyos",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://simonhoyos.github.io",
+  "homepage": "https://simonhoyos.github.io",
   "dependencies": {
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
