@@ -5,6 +5,7 @@ import './App.css';
 import { Home } from "./pages/Home";
 import { Experience } from './pages/Experience';
 import { Projects } from './pages/Projects';
+import { Blog } from "./pages/Blog";
 
 const history = createBrowserHistory();
 class App extends Component {
@@ -15,7 +16,8 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/experience" component={Experience} />
-            <Route exact path="/experience" component={Projects} />
+            <Route exact path="/projects" component={Projects} />
+            <Route exact path="/blog" component={Blog} />
           </Switch>
         </Router>
       </div>

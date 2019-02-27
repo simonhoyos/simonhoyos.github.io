@@ -29,7 +29,7 @@ export function Home() {
             interval={5000}
             showThumbs={false}
             showStatus={false}
-            >
+          >
             <div>
               <Content>Passionate about coding. Love solving problems with React</Content>
             </div>
