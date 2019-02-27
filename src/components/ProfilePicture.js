@@ -3,10 +3,10 @@ import styled from 'styled-components';
 import simon from '../assets/simon.JPG';
 
 const Container = styled.div`
-  width: 335px;
+  width: 200px;
   flex-basis: 335px;
-  height: 335px;
-  margin-top: 50px;
+  height: 200px;
+  margin: 50px auto 20px;
 `;
 
 const Image = styled.img`

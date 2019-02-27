@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import { ProfilePicture } from '../components/ProfilePicture';
 
 const StyledNav = styled.nav`
   height: 100vh;
@@ -62,6 +63,7 @@ const StyledNav = styled.nav`
 export function Nav() {
   return (
     <StyledNav>
+      <ProfilePicture />
       <ul>
         <li><Link to="/">Home</Link></li>
         <li><Link to="/experience">Experience</Link></li>
