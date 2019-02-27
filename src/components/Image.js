@@ -8,6 +8,11 @@ const Container = styled.div`
   flex-basis: 335px;
   height: 335px;
   margin-top: 50px;
+  display: none;
+
+  @media screen and (min-width: 800px) {
+    display: initial;
+  }
 `;
 
 const StyledImage = styled.img`

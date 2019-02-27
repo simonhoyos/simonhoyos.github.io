@@ -2,8 +2,11 @@ import styled from 'styled-components';
 
 export const StyledSection = styled.section`
   display: grid;
-  grid-template-columns: 335px 1fr;
-  height: 100vh;
+
+  @media screen and (min-width: 800px) {
+    grid-template-columns: 335px 1fr;
+    min-height: 100vh;
+  }
 
   & > div:nth-child(2) {
     padding: 0 25px;

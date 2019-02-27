@@ -7,6 +7,11 @@ const StyledNav = styled.nav`
   margin: 0;
   padding: 0;
   position: fixed;
+  display: none;
+
+  @media screen and (min-width: 960px) {
+    display: block;
+  }
 
   ul {
     padding: 0;
