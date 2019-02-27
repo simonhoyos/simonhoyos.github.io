@@ -4,6 +4,7 @@ export const StyledSection = styled.section`
   display: grid;
 
   @media screen and (min-width: 800px) {
+    grid-column-start: 2;
     grid-template-columns: 335px 1fr;
     min-height: 100vh;
   }
