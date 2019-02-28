@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import stairs from '../assets/stairs.jpg';
 import { Icon } from './Icon';
 
 const StyledCard = styled.article`
