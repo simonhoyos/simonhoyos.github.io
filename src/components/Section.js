@@ -1,7 +1,9 @@
 import styled from 'styled-components';
 
 export const Section = styled.section`
-  @media screen and (min-width: 800px) {
+  width: 100%;
+
+  @media screen and (min-width: 960px) {
     grid-column-start: 2;
     min-height: 100vh;
     padding: 0 25px;

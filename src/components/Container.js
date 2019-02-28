@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Nav } from './Nav';
 
 const StyledContainer = styled.div`
+  width: 100%;
   display: grid;
 
   @media screen and (min-width: 960px) {
