@@ -8,11 +8,7 @@ export function Projects() {
     <Section>
       <h2>projects</h2>
       <Grid>
-        <Card></Card>
-        <Card></Card>
-        <Card></Card>
-        <Card></Card>
-        <Card></Card>
+        Coming soon...
       </Grid>
     </Section>
   );
