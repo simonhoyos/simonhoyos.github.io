@@ -13,7 +13,7 @@ export function Experience() {
       <Grid>
         <Card
           title="Huge Inc."
-          description="Huge is an experience design and digital marketing agency that provides strategy, marketing, design, and technology services to Fortune 100 companies."
+          description="Experience design and digital marketing agency that provides strategy, marketing, design, and technology services."
           image={{
             src: huge,
             alt: 'huge logo'
@@ -22,7 +22,7 @@ export function Experience() {
         />
         <Card
           title="Magneto365"
-          description="Find and apply to inspiring jobs"
+          description="Find and apply to inspiring jobs."
           image={{
             src: magneto,
             alt: 'magneto logo'
@@ -31,7 +31,7 @@ export function Experience() {
         />
         <Card
           title="Make it Real"
-          description="High quality online and live programming mentoring"
+          description="High quality online and live programming mentoring."
           image={{
             src: make,
             alt: 'make it real logo'
