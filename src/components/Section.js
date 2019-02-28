@@ -6,7 +6,7 @@ export const Section = styled.section`
   @media screen and (min-width: 960px) {
     grid-column-start: 2;
     min-height: 100vh;
-    padding: 0 25px;
+    padding: 0 25px 25px;
   }
 
   h2 {
