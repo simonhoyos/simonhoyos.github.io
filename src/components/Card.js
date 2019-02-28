@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import stairs from '../assets/stairs.jpg';
+import { Icon } from './Icon';
 
 const StyledCard = styled.article`
   width: 350px;
@@ -21,13 +22,16 @@ const Content = styled.div`
   padding: 10px;
 `;
 
-export function Card() {
+export function Card({ title, description, image, website }) {
   return (
     <StyledCard>
-      <Image src={stairs} alt=""/>
+      <Image src={image.src} alt={image.alt} />
       <Content>
-        <h3>Project Card</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem quasi, ut totam placeat labore</p>
+        <h3>{title}</h3>
+        <p>{description}</p>
+        <a href={website} rel="noopener noreferrer" target="_blank">
+          <Icon icon="world" />
+        </a>
       </Content>
     </StyledCard>
   )
