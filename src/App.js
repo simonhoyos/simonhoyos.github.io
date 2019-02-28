@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Router, Route, Switch } from 'react-router-dom';
 import createBrowserHistory from 'history/createBrowserHistory';
-import './App.css';
 import { Container } from "./components/Container";
 import { Home } from "./pages/Home";
 import { Experience } from './pages/Experience';
