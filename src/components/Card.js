@@ -8,6 +8,7 @@ const StyledCard = styled.article`
   box-shadow: 1px 1px 3px 1px lightgrey;
   border-radius: 10px;
   position: relative;
+  background: #fff;
 `;
 
 const Image = styled.img`
@@ -15,6 +16,7 @@ const Image = styled.img`
   height: 350px;
   object-fit: ${props => props.imageSize || 'cover'};
   border-radius: 10px 10px 0 0;
+  border-bottom: 1px solid #f5f5f5;
 `;
 
 const Content = styled.div`
@@ -60,19 +62,33 @@ const IconContainer = styled.li`
   }
 `;
 
-export function Card({ title, description, image, website, imageSize }) {
+const Title = styled.h3`
+  font-size: 1.5rem;
+  margin: 0;
+`;
+
+const SubTitle = styled.h4`
+  margin: 0;
+  font-size: 1rem;
+  color: #bfbfbf;
+`;
+
+export function Card({ title, description, image, imageSize, subtitle, icons }) {
   return (
     <StyledCard>
-      <Image src={image.src} alt={image.alt} imageSize={imageSize} />
+      <Image src={image.src} alt={image.alt} imageSize={image.size} />
       <Content>
-        <h3>{title}</h3>
+        <Title>{title}</Title>
+        <SubTitle>{subtitle}</SubTitle>
         <p>{description}</p>
         <Icons>
-          <IconContainer>
-            <a href={website} rel="noopener noreferrer" target="_blank">
-              <Icon icon="world" />
-            </a>
-          </IconContainer>
+          {icons.map(({ url, icon }) => (
+            <IconContainer>
+              <a href={url} rel="noopener noreferrer" target="_blank">
+                <Icon icon={icon} />
+              </a>
+            </IconContainer>
+          ))}
         </Icons>
       </Content>
     </StyledCard>
