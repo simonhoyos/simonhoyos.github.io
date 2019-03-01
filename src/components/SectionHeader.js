@@ -1,5 +1,22 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+
+const ScrollAnimation = keyframes`
+  0% {
+    margin-left: 0;
+    letter-spacing: 0;
+  }
+
+  50% {
+    margin-left: 2px;
+    letter-spacing: 2px;
+  }
+
+  100% {
+    margin-left: 0;
+    letter-spacing: 0;
+  }
+`;
 
 const StyledHeader = styled.div`
   margin: 1em 0;
@@ -8,11 +25,15 @@ const StyledHeader = styled.div`
     text-transform: capitalize;
     margin: 0;
   }
+`;
+
+const Scroll = styled.span`
+  font-size: 1rem;
+  font-weight: bold;
+  color: #bfbfbf;
 
   span {
-    font-size: 1rem;
-    font-weight: bold;
-    color: #bfbfbf;
+    animation: ${ScrollAnimation} .5s linear infinite;
   }
 `;
 
@@ -20,7 +41,7 @@ export function SectionHeader({ children, isScrollable }) {
   return (
     <StyledHeader>
       <h3>{children}</h3>
-      {isScrollable && <span>Scroll >> to View More</span>}
+      {isScrollable && <Scroll>Scroll to View More <span>>>></span></Scroll>}
     </StyledHeader>
   );
 }
