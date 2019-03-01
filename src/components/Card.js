@@ -83,7 +83,7 @@ export function Card({ title, description, image, imageSize, subtitle, icons }) 
         <p>{description}</p>
         <Icons>
           {icons.map(({ url, icon }) => (
-            <IconContainer>
+            <IconContainer key={`${url}_${icon}`}>
               <a href={url} rel="noopener noreferrer" target="_blank">
                 <Icon icon={icon} />
               </a>
