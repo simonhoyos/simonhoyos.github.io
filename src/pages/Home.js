@@ -5,7 +5,8 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Section } from "../components/Section";
 
 const Content = styled.blockquote`
-  font-size: 18px;
+  font-size: 25px;
+  font-weight: 700;
   padding: 20px;
   height: 180px;
   display: flex;

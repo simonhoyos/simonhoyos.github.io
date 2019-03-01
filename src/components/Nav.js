@@ -1,17 +1,19 @@
-import React from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { ProfilePicture } from '../components/ProfilePicture';
 import { Icon } from "./Icon";
 
 const StyledNav = styled.nav`
-  min-height: 100vh;
-  width: 250px;
+  height: ${props => props.shown ? '100vh' : '50px'};
+  width: 100%;
   margin: 0;
   padding: 0;
-  display: none;
+  position: relative;
 
   @media screen and (min-width: 960px) {
+    min-height: 100vh;
+    width: 250px;
     display: block;
   }
 
@@ -71,39 +73,83 @@ const StyledNav = styled.nav`
   }
 `;
 
-export function Nav() {
-  return (
-    <StyledNav>
-      <ProfilePicture />
-      <ul className="nav">
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/experience">Experience</Link></li>
-        <li><Link to="/projects">Projects</Link></li>
-        <li><Link to="/blog">Blog</Link></li>
-      </ul>
+StyledNav.defaultProps = {
+  shown: false,
+};
 
-      <ul className="social">
-        <li>
-          <a href="https://www.github.com/simonhoyos" rel="noopener noreferrer" target="_blank">
-            <Icon icon="github" />
-          </a>
-        </li>
-        <li>
-          <a href="https://www.twitter.com/simonhoyosdev" rel="noopener noreferrer" target="_blank">
-            <Icon icon="twitter" />
-          </a>
-        </li>
-        <li>
-          <a href="https://www.medium.com/@simonhoyos" rel="noopener noreferrer" target="_blank">
-            <Icon icon="medium" />
-          </a>
-        </li>
-        <li>
-          <a href="https://www.linkedin.com/in/simonhoyos" rel="noopener noreferrer" target="_blank">
-            <Icon icon="linkedin" />
-          </a>
-        </li>
-      </ul>
-    </StyledNav>
-  );
+const Hamburger = styled.button`
+  position: absolute;
+  top: 12.5px;
+  right: 5px;
+  padding: 0;
+  height: 32px;
+  width: 32px;
+
+  @media screen and (min-width: 960px) {
+    display: none;
+  }
+`;
+
+const Container = styled.div`
+  display: ${props => props.shown ? 'block' : 'none'};
+
+  @media screen and (min-width: 960px) {
+    display: block;
+  }
+`;
+
+class Nav extends Component {
+  state = {
+    shown: false,
+  }
+
+  handleClick = () => {
+    this.setState(({ shown }) => ({
+      shown: !shown,
+    }));
+  }
+
+  render() {
+    return (
+      <StyledNav shown={this.state.shown}>
+        <Hamburger onClick={this.handleClick}>
+          <Icon icon="menu" />
+        </Hamburger>
+        <Container shown={this.state.shown}>
+          <ProfilePicture />
+          <ul className="nav">
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/experience">Experience</Link></li>
+            <li><Link to="/projects">Projects</Link></li>
+            <li><Link to="/blog">Blog</Link></li>
+          </ul>
+
+          <ul className="social">
+            <li>
+              <a href="https://www.github.com/simonhoyos" rel="noopener noreferrer" target="_blank">
+                <Icon icon="github" />
+              </a>
+            </li>
+            <li>
+              <a href="https://www.twitter.com/simonhoyosdev" rel="noopener noreferrer" target="_blank">
+                <Icon icon="twitter" />
+              </a>
+            </li>
+            <li>
+              <a href="https://www.medium.com/@simonhoyos" rel="noopener noreferrer" target="_blank">
+                <Icon icon="medium" />
+              </a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/in/simonhoyos" rel="noopener noreferrer" target="_blank">
+                <Icon icon="linkedin" />
+              </a>
+            </li>
+          </ul>
+        </Container>
+      </StyledNav>
+    );
+  }
 }
+
+export { Nav };
