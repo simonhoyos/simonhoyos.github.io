@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Icon } from './Icon';
+import giphy from '../assets/giphy.gif';
 
 const StyledCard = styled.article`
   width: 350px;
@@ -73,10 +74,29 @@ const SubTitle = styled.h4`
   color: #bfbfbf;
 `;
 
+const ChangeImage = styled.div`
+  .animated {
+    display: none;
+  }
+
+  &:hover {
+    .static {
+      display: none;
+    }
+
+    .animated {
+      display: block;
+    }
+  }
+`;
+
 export function Card({ title, description, image, imageSize, subtitle, icons }) {
   return (
     <StyledCard>
-      <Image src={image.src} alt={image.alt} imageSize={image.size} />
+      <ChangeImage>
+        <Image className="static" src={image.src} alt={image.alt} imageSize={image.size} />
+        <Image className="animated" src={giphy} alt={image.alt} imageSize={image.size} />
+      </ChangeImage>
       <Content>
         <Title>{title}</Title>
         <SubTitle>{subtitle}</SubTitle>
