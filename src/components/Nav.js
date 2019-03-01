@@ -12,7 +12,9 @@ const StyledNav = styled.nav`
   position: relative;
 
   @media screen and (min-width: 960px) {
+    box-shadow: 1px 0 3px 1px lightgray;
     min-height: 100vh;
+    height: 100%;
     width: 250px;
     display: block;
   }
@@ -106,7 +108,7 @@ class Nav extends Component {
   handleClick = () => {
     this.setState(({ shown }) => ({
       shown: !shown,
-    }));
+    }), () => document.body.style.overflow = this.state.shown ? 'hidden' : '');
   }
 
   render() {

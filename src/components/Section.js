@@ -1,8 +1,9 @@
+import React from 'react';
 import styled from 'styled-components';
 
-export const Section = styled.section`
+const StyledSection = styled.section`
   width: 100%;
-  background: #fcfcfc;
+  background: #fdfdfd;
   padding: 0 5px 25px;
   max-width: 100vw;
 
@@ -21,3 +22,18 @@ export const Section = styled.section`
     line-height: 1.5;
   }
 `;
+
+const Container = styled.div`
+  max-width: 950px;
+  margin: 0 auto;
+`;
+
+export function Section({ children }) {
+  return (
+    <StyledSection>
+      <Container>
+        {children}
+      </Container>
+    </StyledSection>
+  );
+}
