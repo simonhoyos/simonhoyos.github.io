@@ -15,9 +15,17 @@ export const projects = [
         },
         icons: [
           {
-            url: 'https://www.meetup.com/React-Medellin/',
+            url: 'https://reactmedellin.org/',
             icon: 'world',
-          }
+          },
+          {
+            url: 'https://github.com/react-medellin/meetup',
+            icon: 'github',
+          },
+          {
+            url: 'https://www.meetup.com/React-Medellin/',
+            icon: 'meetup',
+          },
         ],
       },
       {
