@@ -10,17 +10,17 @@ const StyledHeader = styled.div`
   }
 
   span {
-    font-size: 0.8rem;
+    font-size: 1rem;
     font-weight: bold;
     color: #bfbfbf;
   }
 `;
 
-export function SectionHeader({ children }) {
+export function SectionHeader({ children, isScrollable }) {
   return (
     <StyledHeader>
       <h3>{children}</h3>
-      <span>Scroll >> to View More</span>
+      {isScrollable && <span>Scroll >> to View More</span>}
     </StyledHeader>
   );
 }

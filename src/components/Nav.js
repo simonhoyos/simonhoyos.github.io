@@ -10,9 +10,12 @@ const StyledNav = styled.nav`
   margin: 0;
   padding: 0;
   position: relative;
+  background: #fff;
+  overflow: auto;
+  transition: all 0.5s ease-in-out;
+  box-shadow: 1px 0 3px 1px lightgray;
 
   @media screen and (min-width: 960px) {
-    box-shadow: 1px 0 3px 1px lightgray;
     min-height: 100vh;
     height: 100%;
     width: 250px;
@@ -86,6 +89,8 @@ const Hamburger = styled.button`
   padding: 0;
   height: 32px;
   width: 32px;
+  background: rgba(255,255,255,0);
+  border: none;
 
   @media screen and (min-width: 960px) {
     display: none;
@@ -93,10 +98,9 @@ const Hamburger = styled.button`
 `;
 
 const Container = styled.div`
-  display: ${props => props.shown ? 'block' : 'none'};
-
   @media screen and (min-width: 960px) {
-    display: block;
+    position: fixed;
+    width: 250px;
   }
 `;
 
@@ -108,7 +112,11 @@ class Nav extends Component {
   handleClick = () => {
     this.setState(({ shown }) => ({
       shown: !shown,
-    }), () => document.body.style.overflow = this.state.shown ? 'hidden' : '');
+    }), () => {
+      document.body.style.overflow = this.state.shown ? 'hidden' : ''
+      // block scroll on iOS safari
+      document.documentElement.style.overflow = this.state.shown ? 'hidden' : ''
+    });
   }
 
   render() {
@@ -117,13 +125,13 @@ class Nav extends Component {
         <Hamburger onClick={this.handleClick}>
           <Icon icon="menu" />
         </Hamburger>
-        <Container shown={this.state.shown}>
+        <Container>
           <ProfilePicture />
           <ul className="nav">
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/experience">Experience</Link></li>
-            <li><Link to="/projects">Projects</Link></li>
-            <li><Link to="/blog">Blog</Link></li>
+            <li><Link onClick={this.handleClick} to="/">Home</Link></li>
+            <li><Link onClick={this.handleClick} to="/experience">Experience</Link></li>
+            <li><Link onClick={this.handleClick} to="/projects">Projects</Link></li>
+            <li><Link onClick={this.handleClick} to="/blog">Blog</Link></li>
           </ul>
 
           <ul className="social">

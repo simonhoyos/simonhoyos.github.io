@@ -24,8 +24,16 @@ const StyledSection = styled.section`
 `;
 
 const Container = styled.div`
-  max-width: 950px;
+  max-width: 365px;
   margin: 0 auto;
+
+  @media screen and (min-width: 750px) {
+    max-width: 730px;
+  }
+
+  @media screen and (min-width: 1350px) {
+    max-width: 1095px;
+  }
 `;
 
 export function Section({ children }) {
