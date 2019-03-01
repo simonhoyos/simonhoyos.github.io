@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import createBrowserHistory from 'history/createBrowserHistory';
 import { Container } from "./components/Container";
 import { Home } from "./pages/Home";
@@ -12,7 +12,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Router history={history}>
+        <BrowserRouter history={history}>
           <Container>
             <Switch>
               <Route exact path="/" component={Home} />
@@ -21,7 +21,7 @@ class App extends Component {
               <Route exact path="/blog" component={Blog} />
             </Switch>
           </Container>
-        </Router>
+        </BrowserRouter>
       </div>
     );
   }
