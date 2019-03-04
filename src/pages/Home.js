@@ -8,7 +8,8 @@ const Content = styled.blockquote`
   font-size: 25px;
   font-weight: 700;
   padding: 20px;
-  height: 180px;
+  min-height: 180px;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
