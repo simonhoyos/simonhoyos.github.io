@@ -11,7 +11,7 @@ const StyledNav = styled.nav`
   padding: 0;
   position: relative;
   background: #fff;
-  overflow: auto;
+  overflow: hidden;
   transition: all 0.5s ease-in-out;
   box-shadow: 1px 0 3px 1px lightgray;
 
@@ -20,6 +20,7 @@ const StyledNav = styled.nav`
     height: 100%;
     width: 250px;
     display: block;
+    overflow: auto;
   }
 
   ul {
