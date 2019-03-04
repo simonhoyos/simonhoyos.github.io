@@ -1,18 +1,15 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import createBrowserHistory from 'history/createBrowserHistory';
 import { Container } from "./components/Container";
 import { Home } from "./pages/Home";
 import { Experience } from './pages/Experience';
 import { Projects } from './pages/Projects';
 import { Blog } from "./pages/Blog";
-
-const history = createBrowserHistory();
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <BrowserRouter history={history}>
+        <BrowserRouter>
           <Container>
             <Switch>
               <Route exact path="/" component={Home} />
