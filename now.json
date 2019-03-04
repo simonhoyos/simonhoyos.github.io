@@ -1,6 +1,10 @@
 {
   "version": 2,
   "name": "simonhoyos",
+  "alias": "www.simonhoyos.dev",
+  "env": {
+    "NODE_ENV": "production"
+  },
   "builds": [
     {
       "src": "package.json",
