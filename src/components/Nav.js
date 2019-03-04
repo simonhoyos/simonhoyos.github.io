@@ -109,29 +109,37 @@ class Nav extends Component {
     shown: false,
   }
 
-  handleClick = () => {
+  stopScroll = () => {
+    document.body.style.overflow = this.state.shown ? 'hidden' : ''
+    // block scroll on iOS safari
+    document.documentElement.style.overflow = this.state.shown ? 'hidden' : ''
+  }
+
+  hanldeToggleNav = () => {
     this.setState(({ shown }) => ({
       shown: !shown,
-    }), () => {
-      document.body.style.overflow = this.state.shown ? 'hidden' : ''
-      // block scroll on iOS safari
-      document.documentElement.style.overflow = this.state.shown ? 'hidden' : ''
-    });
+    }), this.stopScroll);
+  }
+
+  hanldeCloseNav = () => {
+    this.setState({
+      shown: false,
+    }, this.stopScroll);
   }
 
   render() {
     return (
       <StyledNav shown={this.state.shown}>
-        <Hamburger onClick={this.handleClick}>
+        <Hamburger onClick={this.hanldeToggleNav}>
           <Icon icon="menu" />
         </Hamburger>
         <Container>
           <ProfilePicture />
           <ul className="nav">
-            <li><Link onClick={this.handleClick} to="/">Home</Link></li>
-            <li><Link onClick={this.handleClick} to="/experience">Experience</Link></li>
-            <li><Link onClick={this.handleClick} to="/projects">Projects</Link></li>
-            <li><Link onClick={this.handleClick} to="/blog">Blog</Link></li>
+            <li><Link onClick={this.hanldeCloseNav} to="/">Home</Link></li>
+            <li><Link onClick={this.hanldeCloseNav} to="/experience">Experience</Link></li>
+            <li><Link onClick={this.hanldeCloseNav} to="/projects">Projects</Link></li>
+            <li><Link onClick={this.hanldeCloseNav} to="/blog">Blog</Link></li>
           </ul>
 
           <ul className="social">
