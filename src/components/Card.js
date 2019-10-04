@@ -75,17 +75,9 @@ const SubTitle = styled.h4`
 `;
 
 const ChangeImage = styled.div`
-  .animated {
-    display: none;
-  }
-
   &:hover {
     .static {
       display: none;
-    }
-
-    .animated {
-      display: block;
     }
   }
 `;
@@ -95,7 +87,6 @@ export function Card({ title, description, image, imageSize, subtitle, icons }) 
     <StyledCard>
       <ChangeImage>
         <Image className="static" src={image.src} alt={image.alt} imageSize={image.size} />
-        <Image className="animated" src={giphy} alt={image.alt} imageSize={image.size} />
       </ChangeImage>
       <Content>
         <Title>{title}</Title>
